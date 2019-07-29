@@ -1,5 +1,6 @@
 package remote_package
 
+// go get -u github.com/easierway/concurrent_map
 import (
 	cm "github.com/easierway/concurrent_map"
 	"testing"
