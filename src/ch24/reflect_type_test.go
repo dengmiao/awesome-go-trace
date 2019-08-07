@@ -21,6 +21,12 @@ func (e *Employee) UpdateAge(age int) {
 	e.Age = age
 }
 
+//type Customer struct {
+//	CookieID	string
+//	Name		string
+//	Age			int
+//}
+
 func TestInvokeByName(t *testing.T) {
 	e := &Employee{"1", "Mike", 20}
 	// 按名字获取成员
