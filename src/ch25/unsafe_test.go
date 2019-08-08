@@ -16,6 +16,7 @@ func TestUnsafe(t *testing.T) {
 	t.Log(f)
 }
 
+//原子类型操作
 func TestAtomic(t *testing.T) {
 	var shareBufPtr unsafe.Pointer
 	writeDataFn := func() {
@@ -27,7 +28,7 @@ func TestAtomic(t *testing.T) {
 	}
 	readDataFn := func() {
 		data := atomic.LoadPointer(&shareBufPtr)
-		fmt.Print(data, *(*[]int)(data))
+		fmt.Println(data, *(*[]int)(data))
 	}
 	var wg sync.WaitGroup
 	writeDataFn()
@@ -49,4 +50,5 @@ func TestAtomic(t *testing.T) {
 			wg.Done()
 		}()
 	}
+	wg.Wait()
 }
