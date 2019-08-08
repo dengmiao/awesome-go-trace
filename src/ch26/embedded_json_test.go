@@ -23,7 +23,7 @@ func TestEmbeddedJson(t *testing.T) {
 		t.Error(err)
 	}
 	fmt.Println(*e)
-	if v, err := json.Marshal(e); err != nil {
+	if v, err := json.Marshal(e); err == nil {
 		fmt.Println(string(v))
 	} else {
 		t.Error(err)
